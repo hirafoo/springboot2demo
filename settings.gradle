@@ -1,1 +1,3 @@
-rootProject.name = 'springboot2demo'
+include 'common'
+include 'web'
+
