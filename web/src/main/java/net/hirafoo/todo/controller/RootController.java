@@ -1,4 +1,4 @@
-package net.hirafoo.springboot2todoapp.controller;
+package net.hirafoo.todo.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
