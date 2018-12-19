@@ -1,0 +1,4 @@
+logging:
+  file: /tmp/todo_log
+  level:
+    org.springframework.web: INFO
