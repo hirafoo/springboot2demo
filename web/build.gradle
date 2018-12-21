@@ -3,5 +3,6 @@ bootJar.launchScript
 dependencies {
     compile project(':common')
     compile 'org.springframework.boot:spring-boot-starter-web'
+    compile("org.springframework.boot:spring-boot-starter-freemarker")
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
