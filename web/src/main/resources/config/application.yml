@@ -1,4 +1,13 @@
-logging:
-  file: /tmp/todo_log
-  level:
-    org.springframework.web: INFO
+server.port: 5100
+---
+spring.profiles: default
+spring.profiles.active: local
+  - common-local
+  - freemarker-common
+  - freemarker-local
+---
+spring.profiles: default
+spring.profiles.active: release
+  - common-release
+  - freemarker-common
+  - freemarker-release
