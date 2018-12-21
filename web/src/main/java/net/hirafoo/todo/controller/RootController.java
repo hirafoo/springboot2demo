@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RestController
-//@Controller
+@Controller
 public class RootController {
     @Autowired
     HelloService helloService;
@@ -19,7 +18,7 @@ public class RootController {
     public String index(Model model) {
         //log.info("{}", "hoge");
         String hello = helloService.hello("hoge");
-        //model.addAttribute("hello", hello);
-        return hello;
+        model.addAttribute("hello", hello);
+        return "index";
     }
 }
