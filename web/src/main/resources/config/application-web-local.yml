@@ -1,0 +1,5 @@
+example.message: "web local"
+logging:
+  file: /tmp/todo_local.log
+  level:
+    org.springframework.web: DEBUG
