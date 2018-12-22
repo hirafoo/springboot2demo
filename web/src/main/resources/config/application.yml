@@ -6,12 +6,12 @@ spring.profiles: local
 spring.profiles.include:
   - common-local
   - web-local
-  - freemarker-common
   - freemarker-local
+  - freemarker-common
 ---
 spring.profiles: release
 spring.profiles.include:
   - common-release
   - web-release
-  - freemarker-common
   - freemarker-release
+  - freemarker-common
