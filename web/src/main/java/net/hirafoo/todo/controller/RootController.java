@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @Controller
@@ -16,7 +15,7 @@ public class RootController {
 
     @GetMapping("/")
     public String index(Model model) {
-        //log.info("{}", "hoge");
+        log.info("{}", "hoge");
         String hello = helloService.hello("hoge");
         model.addAttribute("hello", hello);
         return "index";
