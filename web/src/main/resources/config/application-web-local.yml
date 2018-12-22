@@ -1,5 +1,6 @@
+server.port: 5100
 example.message: "web local"
 logging:
-  file: /tmp/todo_local.log
+  file: /tmp/todo_web_local.log
   level:
     org.springframework.web: DEBUG
