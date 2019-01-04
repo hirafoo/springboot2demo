@@ -8,6 +8,13 @@
     ${hello}
 
     <hr>
+    register
+    <form method="post" action="/todo/create">
+        name<input type="text" name="name" />
+        description<input type="text" name="description" />
+        <input type="submit" />
+    </form>
+    <hr>
 
     <table>
     <#list todoList as todo>
