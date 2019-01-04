@@ -20,4 +20,12 @@ public class TodoController {
         Todo newTodo = todoService.create(name, description);
         return "redirect:/";
     }
+
+    @PostMapping("/todo/delete")
+    public String delete(
+            @RequestParam(value="id", required = true) Long id
+    ) {
+        todoService.delete(id);
+        return "redirect:/";
+    }
 }
