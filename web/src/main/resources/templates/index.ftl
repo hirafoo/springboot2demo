@@ -1,3 +1,3 @@
 index.ftl
-
+hoge
 ${hello}
