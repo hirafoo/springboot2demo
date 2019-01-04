@@ -4,12 +4,13 @@ import lombok.Data;
 
 @Data
 public class Todo {
-    private Long id;
-    private String name;
-    private String description;
+    Long id;
+    String name;
+    String description;
 
-    private Todo(String name, String description) {
+    public Todo(Long id, String name, String description) {
         super();
+        this.id = id;
         this.name = name;
         this.description = description;
     }
