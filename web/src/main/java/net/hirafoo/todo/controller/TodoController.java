@@ -21,6 +21,14 @@ public class TodoController {
         return "redirect:/";
     }
 
+    @PostMapping("/todo/done")
+    public String deone(
+            @RequestParam(value="id", required = true) Long id
+    ) {
+        todoService.done(id);
+        return "redirect:/";
+    }
+
     @PostMapping("/todo/delete")
     public String delete(
             @RequestParam(value="id", required = true) Long id
