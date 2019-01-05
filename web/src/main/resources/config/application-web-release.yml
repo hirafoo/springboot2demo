@@ -3,4 +3,4 @@ example.message: "web release"
 logging:
   file: /tmp/todo_web_release.log
   level:
-    org.springframework.web: DEBUG
+    org.springframework.web: WARN
