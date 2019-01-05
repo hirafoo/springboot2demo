@@ -17,7 +17,7 @@ public class TodoController {
             @RequestParam(value="name", required = true) String name,
             @RequestParam(value="description", required = true) String description
     ) {
-        Todo newTodo = todoService.create(name, description);
+        todoService.create(name, description);
         return "redirect:/";
     }
 

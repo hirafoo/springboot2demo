@@ -8,6 +8,7 @@ spring.profiles.include:
   - web-local
   - freemarker-local
   - freemarker-common
+  - mybatis
 ---
 spring.profiles: release
 spring.profiles.include:
@@ -15,3 +16,4 @@ spring.profiles.include:
   - web-release
   - freemarker-release
   - freemarker-common
+  - mybatis
