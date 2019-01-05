@@ -8,4 +8,4 @@ spring.freemarker:
 logging:
   file: /tmp/todo_web_local.log
   level:
-    org.springframework.web: DEBUG
+    org.springframework.web: WARN
