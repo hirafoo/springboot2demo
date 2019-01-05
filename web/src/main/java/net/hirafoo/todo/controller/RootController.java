@@ -28,4 +28,26 @@ public class RootController {
         model.addAttribute("todoList", todoList);
         return "index";
     }
+
+    @GetMapping("/make_many")
+    public String makeMany() {
+        Todo lastTodo = todoService.getLast();
+        Long id;
+        if (lastTodo == null) {
+            id = 1L;
+        } else {
+            id = lastTodo.getId() + 1L;
+        }
+        for (int i=0; i<10; i++) {
+            todoService.create("name"+id, "description"+id);
+            id++;
+        }
+        return "redirect:/";
+    }
+
+    @GetMapping("/truncate")
+    public String truncate() {
+        todoService.truncate();
+        return "redirect:/";
+    }
 }

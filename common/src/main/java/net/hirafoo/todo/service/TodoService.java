@@ -34,4 +34,12 @@ public class TodoService {
     public void delete(Long id) {
         todoMapper.delete(id);
     }
+
+    public Todo getLast() {
+        return todoMapper.getLast();
+    }
+
+    public void truncate() {
+        todoMapper.truncate();
+    }
 }
