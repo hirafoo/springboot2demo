@@ -29,4 +29,12 @@ interface TodoMapper {
         DELETE FROM todo WHERE id = #{id}
     </script>""")
     fun delete(id: Long)
+
+    @Select("""
+        SELECT * FROM todo ORDER BY id DESC LIMIT 1
+    """)
+    fun getLast(): Todo
+
+    @Delete("""TRUNCATE todo""")
+    fun truncate()
 }
