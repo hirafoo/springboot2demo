@@ -1,1 +1,20 @@
-#
+# https://github.com/tokuhirom/java-handbook/blob/master/spring/hikaricp.md
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/todoapp
+    username: root
+    password: ~
+    # MySQL ドライバを明示的に使用
+    driver-class-name: com.mysql.jdbc.Driver
+    # 明示的に hikaricp を利用することを宣言
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 0
+      idle-timeout: 100000
+      max-lifetime: 3000000
+      read-only: false
+      connection-init-sql: "SET SESSION sql_mode='TRADITIONAL,NO_AUTO_VALUE_ON_ZERO,ONLY_FULL_GROUP_BY'"
+logging:
+  level:
+    net.hirafoo.todo.mapper.*: DEBUG
