@@ -6,6 +6,8 @@
     <body>
 
     <a href="/">todo</a>
+    <a href="/make_many">たくさん作る</a>
+    <a href="/truncate">truncate</a>
 
     <hr>
 
