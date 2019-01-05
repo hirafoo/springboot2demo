@@ -21,7 +21,6 @@ public class RootController {
 
     @GetMapping("/")
     public String index(Model model) {
-        log.info("{}", "hoge");
         String hello = helloService.hello("hoge");
         model.addAttribute("hello", hello);
 
