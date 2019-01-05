@@ -27,6 +27,10 @@ public class TodoService {
         return;
     }
 
+    public void done(Long id) {
+        todoMapper.done(id);
+    }
+
     public void delete(Long id) {
         todoMapper.delete(id);
     }
