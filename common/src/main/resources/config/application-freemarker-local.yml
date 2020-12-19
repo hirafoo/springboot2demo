@@ -2,7 +2,18 @@ spring.freemarker:
   # テンプレートのキャッシュ。
   # 開発時は false。本番では true。
   cache: false
+  # なんか怒られる
+  checkTemplateLocation: false
+  # 開発時は source directory を指定することにより、自動的にリロードされます。
+  # TODO 開発環境のみ自動リロードにする
+  template-loader-path:
+    - file:src/main/resources/templates/
+    - classpath:/templates/
   settings:
     # 例外の処理モード。
     # 開発時は html_debug 本番は rethrow を指定する。
     template_exception_handler: html_debug
+    # 値にカンマがつくのを避ける
+    # https://ksby.hatenablog.com/?page=1494082381
+    # https://freemarker.apache.org/docs/ref_directive_setting.html
+    number_format: computer
