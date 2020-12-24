@@ -17,6 +17,7 @@
     <a href="/truncate">truncate</a>
     <a href="/kt/hello">/kt/hello</a>
     <a href="/kt/loop/while_sample">/kt/loop/while_sample</a>
+    <a href="/kt/loop/for_sample">/kt/loop/for_sample</a>
 
     <hr>
 
