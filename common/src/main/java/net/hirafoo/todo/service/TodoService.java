@@ -1,5 +1,6 @@
 package net.hirafoo.todo.service;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.hirafoo.todo.mapper.TodoMapper;
 import net.hirafoo.todo.model.Todo;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class TodoService {
 
     @Autowired

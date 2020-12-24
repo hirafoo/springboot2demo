@@ -1,4 +1,4 @@
-rootProject.name = 'springboot2demo'
+rootProject.name = 'todoapp'
 
 include 'common'
 include 'web'
