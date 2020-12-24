@@ -5,7 +5,7 @@ spring:
     username: root
     password: ~
     # MySQL ドライバを明示的に使用
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     # 明示的に hikaricp を利用することを宣言
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
