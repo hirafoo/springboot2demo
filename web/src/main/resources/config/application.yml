@@ -1,0 +1,19 @@
+---
+spring.profiles: default
+spring.profiles.active: local
+---
+spring.profiles: local
+spring.profiles.include:
+  - common-local
+  - web-local
+  - freemarker-local
+  - freemarker-common
+  - mybatis
+---
+spring.profiles: release
+spring.profiles.include:
+  - common-release
+  - web-release
+  - freemarker-release
+  - freemarker-common
+  - mybatis

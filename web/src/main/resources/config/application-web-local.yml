@@ -1,0 +1,11 @@
+server.port: 5100
+example.message: "web local"
+spring.freemarker:
+  # 開発時は source directory を指定することにより、自動的にリロードされます。
+  template-loader-path:
+    - file:web/src/main/resources/templates/
+    - classpath:/templates/
+logging:
+  file: /tmp/todo_web_local.log
+  level:
+    org.springframework.web: WARN
