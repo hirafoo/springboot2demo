@@ -1,16 +1,5 @@
-<!doctype html>
-<html lang="ja">
-    <head>
-        <meta charset="utf-8" />
-    </head>
-    <body>
-
-    <a href="/">todo</a>
-    <a href="https://github.com/hirafoo/springboot2-todoapp">repo</a>
-    <a href="/make_many">たくさん作る</a>
-    <a href="/truncate">truncate</a>
-
-    <hr>
+<#import "/include/layout.ftl" as layout>
+<@layout.myLayout title="kotlin" subTitle="kt">
 
     ${hello}
 
@@ -57,5 +46,4 @@
     </#list>
     </table>
 
-    </body>
-</html>
+</@layout.myLayout>
