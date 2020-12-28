@@ -2,7 +2,7 @@ package net.hirafoo.todo.controller.kt
 
 import mu.KotlinLogging
 import net.hirafoo.todo.model.Item
-import net.hirafoo.todo.service.SampleService
+import net.hirafoo.todo.service.SampleKotlinService
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/kt/reflection")
 class ReflectionController(
-    private val sampleService: SampleService
+    private val sampleKotlinService: SampleKotlinService
 ) {
     companion object {
         private val log = KotlinLogging.logger {}

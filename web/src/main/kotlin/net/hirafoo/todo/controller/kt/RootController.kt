@@ -1,6 +1,6 @@
 package net.hirafoo.todo.controller.kt
 
-import net.hirafoo.todo.service.SampleService
+import net.hirafoo.todo.service.SampleKotlinService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestParam
 @Controller
 @RequestMapping("/kt")
 class HelloController(
-    private val sampleService: SampleService
+    private val sampleKotlinService: SampleKotlinService
 ) {
     @GetMapping("hello")
     fun hello(
         model: Model,
         @RequestParam("num", required = false) num: Int?
     ): String {
-        model["result"] = sampleService.hoge(num)
+        model["result"] = sampleKotlinService.hoge(num)
         return "kt/hello"
     }
 }
