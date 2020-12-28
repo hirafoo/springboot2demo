@@ -1,6 +1,6 @@
 package net.hirafoo.todo.controller.kt
 
-import lombok.extern.slf4j.Slf4j
+import mu.KotlinLogging
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam
 @Controller
 @RequestMapping("/kt/loop")
 class LoopController {
+
+    companion object {
+        private val log = KotlinLogging.logger {}
+    }
 
     @GetMapping("while_sample")
     fun whileSample(
@@ -24,11 +28,13 @@ class LoopController {
                 while (loop > 0) {
                     result++
                     loop--
+                    log.info("while : result = {}", result)
                 }
             }
         }
         model["result"] = result
-        return "kt/loop/while_sample"
+        model["type"] = "while"
+        return "kt/loop/loop_sample"
     }
 
     @GetMapping("for_sample")
@@ -40,9 +46,11 @@ class LoopController {
         if (num != null) {
             for (i in 0 until num) {
                 result += i
+                log.info("for : result = {}", result)
             }
         }
         model["result"] = result
-        return "kt/loop/while_sample"
+        model["type"] = "for"
+        return "kt/loop/loop_sample"
     }
 }
