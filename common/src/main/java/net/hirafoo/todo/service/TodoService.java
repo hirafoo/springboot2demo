@@ -1,5 +1,6 @@
 package net.hirafoo.todo.service;
 
+import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.hirafoo.todo.mapper.TodoMapper;
@@ -13,10 +14,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class TodoService {
-
-    @Autowired
-    TodoMapper todoMapper;
-
+    private final TodoMapper todoMapper;
     private static String DBFILE = "/tmp/todo.list";
 
     public List<Todo> getAll() {
@@ -27,6 +25,12 @@ public class TodoService {
     public void create(String name, String description) {
         todoMapper.create(name, description);
         return;
+    }
+
+    public Todo retrieve(Long id) {
+        return todoMapper.retrieve(id).orElseThrow(
+                RuntimeException::new
+        );
     }
 
     public void done(Long id) {

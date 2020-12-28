@@ -19,6 +19,7 @@
             <td>name</td>
             <td>description</td>
             <td>done?</td>
+            <td>edit</td>
             <td>delete</td>
         </tr>
     <#list todoList as todo>
@@ -37,6 +38,7 @@
                 </form>
                 </#if>
             </td>
+            <td><@macro.link link="/todo/edit/${todo.id}" /></td>
             <td>
                 <form method="post" action="/todo/delete">
                     <input type="hidden" name="id" value="${todo.id}" />

@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Select
 import org.apache.ibatis.annotations.Update
+import java.util.Optional
 
 @Mapper
 interface TodoMapper {
@@ -37,4 +38,11 @@ interface TodoMapper {
 
     @Delete("""TRUNCATE todo""")
     fun truncate()
+
+    @Select("""<script>
+        select  *
+        from    todo
+        where   id = #{id}
+    </script>""")
+    fun retrieve(id: Long): Optional<Todo>
 }

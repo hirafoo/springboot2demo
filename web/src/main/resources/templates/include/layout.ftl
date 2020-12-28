@@ -11,9 +11,7 @@
     </head>
 
     <body>
-    <div>header</div>
-    <a href="https://github.com/hirafoo/springboot2-todoapp">repo</a>
-
+    <@macro.link link="https://github.com/hirafoo/springboot2-todoapp" />
     <hr/>
 
     <div>
