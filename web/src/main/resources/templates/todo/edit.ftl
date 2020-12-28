@@ -3,4 +3,6 @@
 <@layout.myLayout title="todo" subTitle="edit">
 
     ${todo.id}
+    <br/>
+    ${todo.name}
 </@layout.myLayout>

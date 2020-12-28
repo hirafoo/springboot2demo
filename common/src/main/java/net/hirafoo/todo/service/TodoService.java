@@ -28,9 +28,7 @@ public class TodoService {
     }
 
     public Todo retrieve(Long id) {
-        return todoMapper.retrieve(id).orElseThrow(
-                RuntimeException::new
-        );
+        return todoMapper.retrieve(id);
     }
 
     public void done(Long id) {

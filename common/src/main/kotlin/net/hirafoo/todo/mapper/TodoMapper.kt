@@ -36,13 +36,13 @@ interface TodoMapper {
     """)
     fun getLast(): Todo
 
-    @Delete("""TRUNCATE todo""")
-    fun truncate()
-
     @Select("""<script>
         select  *
         from    todo
         where   id = #{id}
     </script>""")
-    fun retrieve(id: Long): Optional<Todo>
+    fun retrieve(id: Long): Todo
+
+    @Delete("""TRUNCATE todo""")
+    fun truncate()
 }

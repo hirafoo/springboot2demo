@@ -32,8 +32,7 @@ public class TodoController {
             @PathVariable("id") Long id
     ) {
         log.info("id = {}", id);
-        //Todo todo = todoService.retrieve(id);
-        Todo todo = todoService.getLast();
+        Todo todo = todoService.retrieve(id);
         model.addAttribute("todo", todo);
         return "todo/edit";
     }
