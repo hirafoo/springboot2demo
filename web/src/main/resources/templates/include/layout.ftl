@@ -11,13 +11,24 @@
 
     <body>
     <div>header</div>
-    <a href="/"> / </a>
     <a href="https://github.com/hirafoo/springboot2-todoapp">repo</a>
-    <a href="/make_many">たくさん作る</a>
+    <hr/>
+    <div>
+        <a href="/">root</a>
+    </div>
+    <div>
+        <a href="/make_many">たくさん作る</a>
     <a href="/truncate">truncate</a>
-    <a href="/kt/hello">/kt/hello</a>
-    <a href="/kt/loop/while_sample">/kt/loop/while_sample</a>
-    <a href="/kt/loop/for_sample">/kt/loop/for_sample</a>
+    </div>
+    <div>
+        <a href="/kt/hello">/kt/hello</a>
+    </div>
+    <div>
+        <a href="/kt/loop/while_sample">/kt/loop/while_sample</a>
+    </div>
+    <div>
+        <a href="/kt/loop/for_sample">/kt/loop/for_sample</a>
+    </div>
 
     <hr>
 
