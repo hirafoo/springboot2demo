@@ -1,4 +1,5 @@
 <#macro myLayout title="sample" subTitle="webapp" useVue=false>
+<#import "/include/macro.ftl" as macro>
 
 <!DOCTYPE html>
 <html>
@@ -12,22 +13,24 @@
     <body>
     <div>header</div>
     <a href="https://github.com/hirafoo/springboot2-todoapp">repo</a>
+
     <hr/>
+
     <div>
-        <a href="/">root</a>
+        <@macro.link link="/" />
     </div>
     <div>
-        <a href="/make_many">たくさん作る</a>
-    <a href="/truncate">truncate</a>
+        <@macro.link link="/make_many" />
+    </div>
+        <@macro.link link="/truncate" />
+    <div>
+        <@macro.link link="/kt/hello" />
     </div>
     <div>
-        <a href="/kt/hello">/kt/hello</a>
+        <@macro.link link="/kt/loop/while_sample" />
     </div>
     <div>
-        <a href="/kt/loop/while_sample">/kt/loop/while_sample</a>
-    </div>
-    <div>
-        <a href="/kt/loop/for_sample">/kt/loop/for_sample</a>
+        <@macro.link link="/kt/loop/for_sample" />
     </div>
 
     <hr>

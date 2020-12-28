@@ -1,4 +1,5 @@
 <#import "/include/layout.ftl" as layout>
+<#import "/include/macro.ftl" as macro>
 <@layout.myLayout title="kotlin" subTitle="kt">
 
     ${hello}
