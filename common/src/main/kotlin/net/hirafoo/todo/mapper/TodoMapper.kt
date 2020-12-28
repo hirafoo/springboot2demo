@@ -37,7 +37,12 @@ interface TodoMapper {
     fun getLast(): Todo
 
     @Select("""<script>
-        select  *
+        select   id
+                ,name
+                ,description
+                ,done
+                ,created_at
+                ,updated_at
         from    todo
         where   id = #{id}
     </script>""")
