@@ -48,6 +48,22 @@ interface TodoMapper {
     </script>""")
     fun retrieve(id: Long): Todo
 
+    @Update("""<script>
+        UPDATE todo
+        SET
+        <if test="name != null">
+            name = #{name}
+        </if>
+        <if test="description != null">
+            <if test="name != null">
+            ,
+            </if>
+            description = #{description}
+        </if>
+        WHERE id = #{id}
+    </script>""")
+    fun edit(id: Long, name: String?, description: String?)
+
     @Delete("""TRUNCATE todo""")
     fun truncate()
 }

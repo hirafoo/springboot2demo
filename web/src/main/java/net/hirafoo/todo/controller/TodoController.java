@@ -37,6 +37,18 @@ public class TodoController {
         return "todo/edit";
     }
 
+    @PostMapping("/todo/edit/{id}")
+    public String doEdit(
+            Model model,
+            @PathVariable("id") Long id,
+            @RequestParam("name") String name,
+            @RequestParam("description") String description
+    ) {
+        log.info("id = {}", id);
+        todoService.edit(id, name, description);
+        return "redirect:/";
+    }
+
     @PostMapping("/todo/done")
     public String deone(
             @RequestParam(value="id", required = true) Long id

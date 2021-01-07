@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.hirafoo.todo.mapper.TodoMapper;
 import net.hirafoo.todo.model.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,6 +30,13 @@ public class TodoService {
 
     public Todo retrieve(Long id) {
         return todoMapper.retrieve(id);
+    }
+
+    public void edit(
+            Long id,
+            @Nullable String name,
+            @Nullable String description) {
+        todoMapper.edit(id, name, description);
     }
 
     public void done(Long id) {
