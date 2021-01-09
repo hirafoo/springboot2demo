@@ -21,6 +21,7 @@
             <td>done?</td>
             <td>edit</td>
             <td>delete</td>
+            <td>api</td>
         </tr>
     <#list todoList as todo>
         <tr>
@@ -45,6 +46,7 @@
                     <input type="submit" value="delete" />
                 </form>
             </td>
+            <td><@macro.link link="/kt/api/todo/detail/${todo.id}" /></td>
         </tr>
     </#list>
     </table>
