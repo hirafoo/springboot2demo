@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/kt/reflection")
-class ReflectionController(
+class KtReflectionController(
     private val sampleKotlinService: SampleKotlinService
 ) {
     companion object {

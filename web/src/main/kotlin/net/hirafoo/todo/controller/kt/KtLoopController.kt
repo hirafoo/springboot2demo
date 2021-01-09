@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
 @RequestMapping("/kt/loop")
-class LoopController {
+class KtLoopController {
     companion object {
         private val log = KotlinLogging.logger {}
     }
