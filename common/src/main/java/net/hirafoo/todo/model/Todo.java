@@ -9,6 +9,7 @@ public class Todo {
     public String description;
     public boolean done;
     // TODO why long?
+    public Long term;
     public Long createdAt;
     public Long updatedAt;
 }

@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TodoService {
     private final TodoMapper todoMapper;
-    private static String DBFILE = "/tmp/todo.list";
+    private static final String DBFILE = "/tmp/todo.list";
 
     public List<Todo> getAll() {
         List<Todo> list = todoMapper.selectAll();
