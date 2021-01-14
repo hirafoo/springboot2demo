@@ -11,7 +11,7 @@ import java.util.Optional
 @Mapper
 interface TodoMapper {
     @Insert("""
-        INSERT INTO todo (name, description, done, created_at, updated_at)
+        INSERT INTO todo (name, description, done, term, created_at, updated_at)
         VALUES (#{name}, #{description}, 0, UNIX_TIMESTAMP(), 0)
     """)
     fun create(name: String, description: String)
@@ -37,14 +37,15 @@ interface TodoMapper {
     fun getLast(): Todo
 
     @Select("""<script>
-        select   id
+        SELECT   id
                 ,name
                 ,description
                 ,done
+                ,term
                 ,created_at
                 ,updated_at
-        from    todo
-        where   id = #{id}
+        FROM    todo
+        WHERE   id = #{id}
     </script>""")
     fun retrieve(id: Long): Todo
 

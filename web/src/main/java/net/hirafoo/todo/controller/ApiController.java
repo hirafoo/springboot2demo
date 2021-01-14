@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 public class ApiController {
 
+    // TODO use db
     @GetMapping("/api/list")
     public List<Item> list() {
         List<Item> items = new ArrayList<Item>();
@@ -23,6 +24,7 @@ public class ApiController {
                     "name_" + i,
                     "desc_" + i,
                     false,
+                    LocalDateTime.now(),
                     LocalDateTime.now(),
                     null
                     ));

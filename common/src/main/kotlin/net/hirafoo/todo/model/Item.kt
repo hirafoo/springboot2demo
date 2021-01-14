@@ -7,6 +7,7 @@ data class Item(
     var name: String? = null,
     var description: String? = null,
     var done: Boolean = false,
+    var term: LocalDateTime = LocalDateTime.MIN,
     var createdAt: LocalDateTime = LocalDateTime.MIN,
     var updatedAt: LocalDateTime? = null
 )
