@@ -3,7 +3,7 @@ spring:
   datasource:
     url: jdbc:mysql://127.0.0.1/todoapp
     username: todoapp
-    password: localmysqlpasswd
+    password: todoapp-password
     # MySQL ドライバを明示的に使用
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 明示的に hikaricp を利用することを宣言

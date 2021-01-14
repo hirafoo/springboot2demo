@@ -13,5 +13,5 @@ CREATE TABLE IF NOT EXISTS `todo` (
     UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-grant all privileges on todoapp.* to 'todoapp'@'127.0.0.1' identified by password 'localmysqlpasswd';
+grant all privileges on todoapp.* to 'todoapp'@'127.0.0.1' identified by password 'todoapp-password';
 flush privileges;
