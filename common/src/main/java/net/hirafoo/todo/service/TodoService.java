@@ -1,11 +1,9 @@
 package net.hirafoo.todo.service;
 
-import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.hirafoo.todo.mapper.TodoMapper;
 import net.hirafoo.todo.model.Todo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +14,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TodoService {
     private final TodoMapper todoMapper;
-    private static final String DBFILE = "/tmp/todo.list";
 
     public List<Todo> getAll() {
         List<Todo> list = todoMapper.selectAll();
@@ -25,7 +22,6 @@ public class TodoService {
 
     public void create(String name, String description) {
         todoMapper.create(name, description);
-        return;
     }
 
     public Todo retrieve(Long id) {
