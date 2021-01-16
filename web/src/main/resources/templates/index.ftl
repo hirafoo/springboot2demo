@@ -20,8 +20,10 @@
             <td>description</td>
             <td>done?</td>
             <td>edit</td>
+            <td>term</td>
             <td>delete</td>
             <td>api</td>
+            <td>created_at</td>
         </tr>
     <#list todoList as todo>
         <tr>
@@ -29,7 +31,7 @@
             <td>${todo.name}</td>
             <td>${todo.description}</td>
             <td>
-                <#if todo.isDone() == true>
+                <#if todo.done>
                     done
                 <#else>
                     not yet
@@ -40,6 +42,7 @@
                 </#if>
             </td>
             <td><@macro.link link="/todo/edit/${todo.id}" /></td>
+            <td>${todo.getTerm()}</td>
             <td>
                 <form method="post" action="/todo/delete">
                     <input type="hidden" name="id" value="${todo.id}" />
@@ -47,6 +50,7 @@
                 </form>
             </td>
             <td><@macro.link link="/kt/api/todo/detail/${todo.id}" /></td>
+            <td>${todo.createdAt}</td>
         </tr>
     </#list>
     </table>
