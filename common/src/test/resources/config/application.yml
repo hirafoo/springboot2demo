@@ -1,0 +1,4 @@
+spring.profiles.active: local-test
+---
+spring.profiles: local-test
+spring.profiles.include: common,common-local-test
