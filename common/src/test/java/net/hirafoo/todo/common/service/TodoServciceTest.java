@@ -15,6 +15,8 @@ import org.junit.jupiter.api.Test;
 import net.hirafoo.todo.service.TodoService;
 import net.hirafoo.todo.mapper.TodoMapper;
 
+import java.time.LocalDateTime;
+
 @Slf4j
 @SpringBootTest
 class TodoServiceTest {
@@ -30,12 +32,14 @@ class TodoServiceTest {
                 "name",
                 "desc",
                 false,
+                //LocalDateTime.of(2020, 1, 1, 11, 22, 33),
                 0,
                 0,
                 0
         );
-        log.info("id {}", todo.getId());
         assertEquals(todo.getName(), "name");
+        log.info("getTerm {}", todo.getTerm());
         assertEquals(todo.getTerm(), 0);
+        //assertEquals(todo.getTerm(), "2020-01-01T11:22:33");
     }
 }
