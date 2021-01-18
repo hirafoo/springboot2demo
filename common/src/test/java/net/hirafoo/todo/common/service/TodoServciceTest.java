@@ -32,14 +32,14 @@ class TodoServiceTest {
                 "name",
                 "desc",
                 false,
-                //LocalDateTime.of(2020, 1, 1, 11, 22, 33),
-                0,
+                LocalDateTime.of(2020, 1, 1, 11, 22, 33),
+                //0,
                 0,
                 0
         );
         assertEquals(todo.getName(), "name");
         log.info("getTerm {}", todo.getTerm());
-        assertEquals(todo.getTerm(), 0);
-        //assertEquals(todo.getTerm(), "2020-01-01T11:22:33");
+        //assertEquals(todo.getTerm(), 0);
+        assertEquals(todo.getTerm().toString(), "2020-01-01T11:22:33");
     }
 }
