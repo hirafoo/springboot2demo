@@ -14,18 +14,19 @@ CREATE TABLE IF NOT EXISTS `todo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*
-mysql> select PASSWORD('todoapp_test-password');
+mysql> select PASSWORD('todoapp_password');
 +-------------------------------------------+
-| PASSWORD('todoapp_test-password')         |
+| PASSWORD('todoapp_password')              |
 +-------------------------------------------+
-| *4030D554D77831279D15A0B9762048030BB020DF |
+| *28D47294836F7B98196E21ACD6BEBBFD0410CE3F |
 +-------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
 */
-grant all privileges on todoapp_test.* to 'todoapp_test'@'127.0.0.1' identified by password '*4030D554D77831279D15A0B9762048030BB020DF';
+grant all privileges on todoapp.* to 'todoapp'@'127.0.0.1' identified by password '*28D47294836F7B98196E21ACD6BEBBFD0410CE3F';
+grant all privileges on todoapp.* to 'todoapp'@'localhost' identified by password '*28D47294836F7B98196E21ACD6BEBBFD0410CE3F';
 flush privileges;
 
--- for test
-
+-- test
 create database todoapp_test;
 use todoapp_test;
 
@@ -41,5 +42,15 @@ CREATE TABLE IF NOT EXISTS `todo` (
     UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-grant all privileges on todoapp_test.* to 'todoapp_test'@'127.0.0.1' identified by password '*4030D554D77831279D15A0B9762048030BB020DF';
+/*
+mysql> select PASSWORD('todoapp_test_password');
++-------------------------------------------+
+| PASSWORD('todoapp_test_password')         |
++-------------------------------------------+
+| *2E06B92D1595731E4E66DF32564D57A12931E91C |
++-------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+*/
+grant all privileges on todoapp_test.* to 'todoapp_test'@'127.0.0.1' identified by password '*2E06B92D1595731E4E66DF32564D57A12931E91C';
+grant all privileges on todoapp_test.* to 'todoapp_test'@'localhost' identified by password '*2E06B92D1595731E4E66DF32564D57A12931E91C';
 flush privileges;
