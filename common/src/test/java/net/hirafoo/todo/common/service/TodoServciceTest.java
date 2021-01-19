@@ -23,17 +23,20 @@ import java.time.LocalDateTime;
 class TodoServiceTest {
     @Autowired
     TodoService todoService;
-    @MockBean
-    TodoMapper mockTodoMapper;
+    //@MockBean
+    //TodoMapper mockTodoMapper;
+    @Autowired
+    TodoMapper todoMapper;
 
     @Test
+    @Transactional
     void testTodoCreate() throws Exception {
-        mockTodoMapper.create(
+        todoMapper.create(
                 "name",
                 "description"
         );
-        Todo todo = mockTodoMapper.getLast();
-        log.info("{}", todo);
+        Todo todo = todoMapper.getLast();
+        log.info("todo {}", todo);
         assertEquals(todo.getName(), "name");
         log.info("getTerm {}", todo.getTerm());
         assertEquals(todo.getTerm(), 0);
