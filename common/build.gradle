@@ -1,6 +1,7 @@
+// https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/html/
+// common は実行可能なjarは不要
 jar.enabled = true
 bootJar.enabled = false
 
 dependencies {
-
 }
