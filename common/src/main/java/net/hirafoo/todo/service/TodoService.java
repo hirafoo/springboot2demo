@@ -2,6 +2,7 @@ package net.hirafoo.todo.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import lombok.var;
 import net.hirafoo.todo.mapper.TodoMapper;
 import net.hirafoo.todo.model.Todo;
 import org.springframework.lang.Nullable;
@@ -32,7 +33,14 @@ public class TodoService {
             Long id,
             @Nullable String name,
             @Nullable String description) {
-        todoMapper.edit(id, name, description);
+        var todo = todoMapper.retrieve(id);
+        todoMapper.edit(
+                todo.getId(),
+                todo.getName(),
+                todo.getDescription(),
+                todo.getDone(),
+                todo.getTerm()
+        );
     }
 
     public void done(Long id) {
