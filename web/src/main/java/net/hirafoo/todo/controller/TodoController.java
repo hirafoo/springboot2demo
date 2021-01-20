@@ -24,7 +24,7 @@ public class TodoController {
             @RequestParam(value="name", required = true) String name,
             @RequestParam(value="description", required = true) String description
     ) {
-        todoService.create(name, description);
+        todoService.create(name, description, 0);
         return "redirect:/";
     }
 
@@ -46,7 +46,7 @@ public class TodoController {
             @RequestParam("name") String name,
             @RequestParam("description") String description,
             @RequestParam("done") Boolean done,
-            @RequestParam("term") LocalDateTime term
+            @RequestParam("term") Integer term
             ) {
         log.info("id = {}", id);
         todoService.edit(id, name, description, done, term);

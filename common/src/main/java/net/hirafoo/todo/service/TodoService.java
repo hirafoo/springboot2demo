@@ -54,10 +54,11 @@ public class TodoService {
         var todo = todoMapper.retrieve(id);
         todoMapper.edit(
                 todo.getId(),
-                todo.getName(),
-                todo.getDescription(),
-                todo.getDone(),
-                (int)todo.getTerm().atZone(ZONE_ID_DEFAULT).toEpochSecond()
+                name,
+                description,
+                done,
+                term
+                //(int)todo.getTerm().atZone(ZONE_ID_DEFAULT).toEpochSecond()
         );
     }
 
