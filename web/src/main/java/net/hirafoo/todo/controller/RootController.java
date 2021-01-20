@@ -2,6 +2,7 @@ package net.hirafoo.todo.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import lombok.var;
 import net.hirafoo.todo.model.Todo;
 import net.hirafoo.todo.service.HelloService;
 import net.hirafoo.todo.service.TodoService;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Slf4j
@@ -39,7 +41,10 @@ public class RootController {
             id = lastTodo.getId() + 1L;
         }
         for (int i=0; i<10; i++) {
-            todoService.create("name"+id, "description"+id, i);
+            var term = LocalDateTime.of(
+                    2020,1,1,0,0,i
+            );
+            todoService.create("name"+id, "description"+id, term);
             id++;
         }
         return "redirect:/";

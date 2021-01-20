@@ -22,9 +22,14 @@ public class TodoController {
     @PostMapping("/todo/create")
     public String create(
             @RequestParam(value="name", required = true) String name,
-            @RequestParam(value="description", required = true) String description
+            @RequestParam(value="description", required = true) String description,
+            @RequestParam(value="term_year", required = true) Integer term_year,
+            @RequestParam(value="term_month", required = true) Integer term_month,
+            @RequestParam(value="term_day", required = true) Integer term_day
     ) {
-        todoService.create(name, description, 0);
+        LocalDateTime term = LocalDateTime.of(
+                term_year, term_month, term_day, 00,00,00);
+        todoService.create(name, description, term);
         return "redirect:/";
     }
 

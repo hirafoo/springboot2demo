@@ -32,12 +32,13 @@ public class TodoService {
     public void create(
             String name,
             String description,
-            Integer term
+            LocalDateTime term
     ) {
+        int epoch = (int)term.atZone(ZONE_ID_DEFAULT).toEpochSecond();
         todoMapper.create(
                 name,
                 description,
-                term
+                epoch
         );
     }
 

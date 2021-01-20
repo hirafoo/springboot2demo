@@ -12,7 +12,7 @@ import java.time.LocalDateTime
 interface TodoMapper {
     @Insert("""
         INSERT INTO todo (name, description, done, term, created_at, updated_at)
-        VALUES (#{name}, #{description}, 0, 0, UNIX_TIMESTAMP(), 0)
+        VALUES (#{name}, #{description}, 0, #{term}, UNIX_TIMESTAMP(), 0)
     """)
     fun create(name: String, description: String, term: Int)
 
