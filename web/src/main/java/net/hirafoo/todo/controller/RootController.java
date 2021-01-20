@@ -39,7 +39,7 @@ public class RootController {
             id = lastTodo.getId() + 1L;
         }
         for (int i=0; i<10; i++) {
-            todoService.create("name"+id, "description"+id);
+            todoService.create("name"+id, "description"+id, i);
             id++;
         }
         return "redirect:/";
