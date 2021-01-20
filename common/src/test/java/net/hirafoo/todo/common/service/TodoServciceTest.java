@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import net.hirafoo.todo.service.TodoService;
 import net.hirafoo.todo.mapper.TodoMapper;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -22,24 +23,25 @@ import java.time.LocalDateTime;
 class TodoServiceTest {
     @Autowired
     TodoService todoService;
-    @MockBean
-    TodoMapper mockTodoMapper;
+    //@MockBean
+    //TodoMapper mockTodoMapper;
+    @Autowired
+    TodoMapper todoMapper;
 
     @Test
+    @Transactional
     void testTodoCreate() throws Exception {
-        Todo todo = new Todo(
-                1,
+        log.info("before create");
+        todoMapper.create(
                 "name",
-                "desc",
-                false,
-                LocalDateTime.of(2020, 1, 1, 11, 22, 33),
-                //0,
-                0,
-                0
+                "description"
         );
+        log.info("after create");
+        Todo todo = todoMapper.getLast();
+        log.info("todo {}", todo);
         assertEquals(todo.getName(), "name");
         log.info("getTerm {}", todo.getTerm());
-        //assertEquals(todo.getTerm(), 0);
-        assertEquals(todo.getTerm().toString(), "2020-01-01T11:22:33");
+        assertEquals(todo.getTerm(), 0);
+        //assertEquals(todo.getTerm().toString(), "2020-01-01T11:22:33");
     }
 }

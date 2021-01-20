@@ -1,5 +1,7 @@
 # https://github.com/tokuhirom/java-handbook/blob/master/spring/mybatis.md
 mybatis:
+  # タイプハンドラの適用
+  type-handlers-package: net.hirafoo.todo.mybaits.type
   configuration:
     # lower_case のカラム名を camelCase のプロパティにマッピングする
     mapUnderscoreToCamelCase: true
@@ -10,5 +12,3 @@ mybatis:
     # WARNING: WARN ログを出す(お勧め。org.apache.ibatis.session.AutoMappingUnknownColumnBehavior で WARN です)
     # FAILING: Fail mapping (Throw SqlSessionException) (local 開発時のみオンにすると良いでしょう)
     autoMappingUnknownColumnBehavior: FAILING
-  # タイプハンドラの適用
-  # type-handlers-package: net.hirafoo.todo.mybaits.type

@@ -1,0 +1,3 @@
+<typeHandlers>
+    <typeHandler handler="net.hirafoo.todo.mybatis.type"/>
+</typeHandlers>
