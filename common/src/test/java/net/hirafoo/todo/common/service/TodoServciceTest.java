@@ -60,6 +60,6 @@ class TodoServiceTest {
         todo = todoMapper.getLast();
         //assertEquals(todo.getTerm(), 0);
         log.info("{}", todo);
-        assertEquals(todo.getTerm().toString(), "2021-01-20 20:11:22");
+        assertEquals(todo.getTerm().toString(), "2021-01-20T20:11:22");
     }
 }
