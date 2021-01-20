@@ -1,4 +1,4 @@
-package net.hirafoo.todo.service;
+package net.hirafoo.todo.common.service;
 
 public class SampleJavaService {
     public static void main(String[] args) {

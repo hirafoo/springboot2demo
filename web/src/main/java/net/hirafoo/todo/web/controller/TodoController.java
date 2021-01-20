@@ -1,9 +1,9 @@
-package net.hirafoo.todo.controller;
+package net.hirafoo.todo.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.hirafoo.todo.model.Todo;
-import net.hirafoo.todo.service.TodoService;
+import net.hirafoo.todo.common.model.Todo;
+import net.hirafoo.todo.common.service.TodoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

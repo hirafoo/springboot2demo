@@ -1,4 +1,4 @@
-package net.hirafoo.todo.controller.kt
+package net.hirafoo.todo.web.controller.kt
 
 import mu.KotlinLogging
 import org.springframework.stereotype.Controller

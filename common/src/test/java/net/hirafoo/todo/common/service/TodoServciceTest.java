@@ -2,23 +2,17 @@ package net.hirafoo.todo.common.service;
 
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
-import net.hirafoo.todo.model.Todo;
+import net.hirafoo.todo.common.model.Todo;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.jetbrains.annotations.Nullable;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
+
 import org.junit.jupiter.api.Test;
 
 
-import net.hirafoo.todo.service.TodoService;
-import net.hirafoo.todo.mapper.TodoMapper;
+import net.hirafoo.todo.common.mapper.TodoMapper;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 @Slf4j

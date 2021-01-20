@@ -1,7 +1,7 @@
 # https://github.com/tokuhirom/java-handbook/blob/master/spring/mybatis.md
 mybatis:
   # タイプハンドラの適用
-  type-handlers-package: net.hirafoo.todo.mybatis.type
+  type-handlers-package: net.hirafoo.todo.common.mybatis.type
   configuration:
     # lower_case のカラム名を camelCase のプロパティにマッピングする
     mapUnderscoreToCamelCase: true

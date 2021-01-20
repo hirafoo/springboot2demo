@@ -1,4 +1,4 @@
-package net.hirafoo.todo.mybatis.type;
+package net.hirafoo.todo.common.mybatis.type;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.type.BaseTypeHandler;

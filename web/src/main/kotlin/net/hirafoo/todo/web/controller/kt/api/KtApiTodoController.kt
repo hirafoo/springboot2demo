@@ -1,8 +1,8 @@
-package net.hirafoo.todo.controller.kt.api
+package net.hirafoo.todo.web.controller.kt.api
 
 import mu.KotlinLogging
-import net.hirafoo.todo.model.Todo
-import net.hirafoo.todo.service.TodoService
+import net.hirafoo.todo.common.model.Todo
+import net.hirafoo.todo.common.service.TodoService
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
