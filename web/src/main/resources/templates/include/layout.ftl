@@ -15,7 +15,7 @@
     <hr/>
 
     <div>
-        <@macro.link link="/" />
+        <@macro.link link="/ top" />
     </div>
     <div>
         <@macro.link link="/make_many" />
