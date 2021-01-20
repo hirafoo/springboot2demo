@@ -1,5 +1,6 @@
 package net.hirafoo.todo.mybatis.type;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
@@ -9,13 +10,18 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
+@Slf4j
 @MappedTypes(LocalDateTime.class)
 public class LocalDateTimeTypeHandler extends BaseTypeHandler<LocalDateTime> {
     public static final ZoneId ZONE_ID_DEFAULT = ZoneId.systemDefault();
 
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, LocalDateTime parameter, JdbcType jdbcType) throws SQLException {
-        ps.setTimestamp(i, Timestamp.valueOf(parameter));
+        log.info("-------------------------");
+        log.info("{}", parameter);
+        log.info("{}", Timestamp.valueOf(parameter).toInstant().getEpochSecond());
+        log.info("-------------------------");
+        ps.setInt(i, (int) Timestamp.valueOf(parameter).toInstant().getEpochSecond());
     }
 
     @Override

@@ -14,7 +14,7 @@ interface TodoMapper {
         INSERT INTO todo (name, description, done, term, created_at, updated_at)
         VALUES (#{name}, #{description}, 0, 0, UNIX_TIMESTAMP(), 0)
     """)
-    fun create(name: String, description: String)
+    fun create(name: String, description: String, term: Int)
 
     @Select("""
         SELECT * FROM todo ORDER BY id ASC
@@ -63,7 +63,7 @@ interface TodoMapper {
         name: String,
         description: String,
         done: Boolean,
-        term: LocalDateTime
+        term: Int
     )
 
     @Delete("""TRUNCATE todo""")
