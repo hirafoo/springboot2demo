@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Select
 import org.apache.ibatis.annotations.Update
+import java.time.LocalDateTime
 
 @Mapper
 interface TodoMapper {
@@ -13,7 +14,7 @@ interface TodoMapper {
         INSERT INTO todo (name, description, done, term, created_at, updated_at)
         VALUES (#{name}, #{description}, 0, 0, UNIX_TIMESTAMP(), 0)
     """)
-    fun create(name: String, description: String)
+    fun create(name: String, description: String, term: Int)
 
     @Select("""
         SELECT * FROM todo ORDER BY id ASC
@@ -51,18 +52,19 @@ interface TodoMapper {
     @Update("""<script>
         UPDATE todo
         SET
-        <if test="name != null">
-            name = #{name}
-        </if>
-        <if test="description != null">
-            <if test="name != null">
-            ,
-            </if>
-            description = #{description}
-        </if>
+             name = #{name}
+            ,description = #{description}
+            ,done = #{done}
+            ,term = #{term}
         WHERE id = #{id}
     </script>""")
-    fun edit(id: Long, name: String?, description: String?)
+    fun edit(
+        id: Long,
+        name: String,
+        description: String,
+        done: Boolean,
+        term: Int
+    )
 
     @Delete("""TRUNCATE todo""")
     fun truncate()

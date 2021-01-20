@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDateTime;
+
 @Slf4j
 @RequiredArgsConstructor
 @Controller
@@ -42,10 +44,12 @@ public class TodoController {
             Model model,
             @PathVariable("id") Long id,
             @RequestParam("name") String name,
-            @RequestParam("description") String description
-    ) {
+            @RequestParam("description") String description,
+            @RequestParam("done") Boolean done,
+            @RequestParam("term") LocalDateTime term
+            ) {
         log.info("id = {}", id);
-        todoService.edit(id, name, description);
+        todoService.edit(id, name, description, done, term);
         return "redirect:/";
     }
 
