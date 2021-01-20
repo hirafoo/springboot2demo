@@ -31,10 +31,12 @@ class TodoServiceTest {
     @Test
     @Transactional
     void testTodoCreate() throws Exception {
+        log.info("before create");
         todoMapper.create(
                 "name",
                 "description"
         );
+        log.info("after create");
         Todo todo = todoMapper.getLast();
         log.info("todo {}", todo);
         assertEquals(todo.getName(), "name");

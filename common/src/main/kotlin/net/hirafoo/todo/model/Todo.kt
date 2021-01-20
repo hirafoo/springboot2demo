@@ -8,8 +8,8 @@ data class Todo(
     var description: String? = null,
     var done: Boolean = false,
     // termをLocalDateTime にしたいが、下のように書くとエラー
-    //var term: LocalDateTime = LocalDateTime.MIN,
-    var term: Int = 0,
+    var term: LocalDateTime = LocalDateTime.MIN,
+    //var term: Int = 0,
     //var createdAt: LocalDateTime = LocalDateTime.MIN,
     var createdAt: Int = 0,
     //var updatedAt: LocalDateTime? = null
