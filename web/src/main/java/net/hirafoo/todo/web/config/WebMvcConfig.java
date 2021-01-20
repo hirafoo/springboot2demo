@@ -1,4 +1,4 @@
-package net.hirafoo.todo.config;
+package net.hirafoo.todo.web.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;

@@ -1,6 +1,6 @@
-package net.hirafoo.todo.controller.kt
+package net.hirafoo.todo.web.controller.kt
 
-import net.hirafoo.todo.service.SampleKotlinService
+import net.hirafoo.todo.common.service.SampleKotlinService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set

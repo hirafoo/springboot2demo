@@ -1,4 +1,4 @@
-package net.hirafoo.todo.model
+package net.hirafoo.todo.common.model
 
 import java.time.LocalDateTime
 

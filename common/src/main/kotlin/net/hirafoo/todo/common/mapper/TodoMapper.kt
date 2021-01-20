@@ -1,12 +1,11 @@
-package net.hirafoo.todo.mapper
+package net.hirafoo.todo.common.mapper
 
-import net.hirafoo.todo.model.Todo
+import net.hirafoo.todo.common.model.Todo
 import org.apache.ibatis.annotations.Delete
 import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Select
 import org.apache.ibatis.annotations.Update
-import java.time.LocalDateTime
 
 @Mapper
 interface TodoMapper {

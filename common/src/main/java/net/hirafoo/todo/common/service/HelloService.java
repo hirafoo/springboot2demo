@@ -1,4 +1,4 @@
-package net.hirafoo.todo.service;
+package net.hirafoo.todo.common.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
