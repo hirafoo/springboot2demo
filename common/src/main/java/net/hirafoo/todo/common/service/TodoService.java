@@ -2,7 +2,6 @@ package net.hirafoo.todo.common.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import lombok.var;
 import net.hirafoo.todo.common.mapper.TodoMapper;
 import net.hirafoo.todo.common.model.Todo;
 import org.springframework.lang.Nullable;
